@@ -7,10 +7,11 @@
 :root {
   --main-bg-color: #ea8383;
   --fade-in: ease 0.2s;
+  --main-font: 'Bad Script', cursive;
 }
 
 body {
-  font-family: 'Bad Script', cursive;
+  font-family: var(--main-font);
   cursor: default;
 }
 
@@ -19,7 +20,13 @@ a {
   font-family: 'Raleway', sans-serif;
 }
 
-a {
+a,
+span {
+  color: var(--main-bg-color);
+  cursor: pointer;
+}
+
+.highlighted {
   color: var(--main-bg-color);
 }
 
@@ -151,4 +158,162 @@ nav {
   top: 5px;
   right: 10px;
   color: var(--main-bg-color);
+}
+
+/********************* LOGIN CONTAINER *********************/
+
+.login-container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 3rem;
+}
+
+.login-container form {
+  margin: 2rem 0;
+  display: flex;
+  position: relative;
+}
+
+.login-container form input {
+  padding: 1rem 1rem;
+  width: 375px;
+  border: solid 1px black;
+  font-size: 1.25rem;
+  border-radius: 3px 0 0 3px;
+}
+
+.login-container form label {
+  position: absolute;
+  top: -30px;
+}
+
+.login-container form button {
+  font-size: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  font-family: var(--main-font);
+  background-color: var(--main-bg-color);
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+textarea:focus,
+input:focus {
+  outline: solid var(--main-bg-color) 2px;
+}
+
+/********************* ADD RESTAURANT *********************/
+
+.welcome-titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 4rem;
+}
+
+.add-restaurant-container form {
+  display: grid;
+  margin: 0 4rem;
+  grid-template-areas:
+    'a a . . b b b'
+    'c c . . d d d'
+    'e e . . f f f'
+    'g g g . . h h'
+    'g g g . . o o'
+    'j . . . . . .';
+  padding: 2rem;
+  background-color: #fff0f0;
+  position: relative;
+}
+
+.add-restaurant-container form input {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.add-restaurant-container select {
+  margin: 1rem 0;
+}
+
+.add-restaurant-container textarea {
+  font-family: var(--main-font);
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+.add-restaurant-container button {
+  font-family: var(--main-font);
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: var(--main-bg-color);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.name {
+  grid-area: a;
+}
+
+.website {
+  grid-area: c;
+}
+
+.postcode {
+  grid-area: e;
+}
+
+.comment {
+  grid-area: g;
+}
+
+.must-1 {
+  grid-area: b;
+}
+.must-2 {
+  grid-area: d;
+}
+
+.must-3 {
+  grid-area: f;
+}
+
+.cuisine-select {
+  grid-area: h;
+}
+
+.city {
+  grid-area: o;
+}
+.add-restaurant-button {
+  grid-area: j;
+}
+
+.cuisine-select-label {
+  position: absolute;
+  bottom: 38%;
+  right: 30%;
+  font-size: 1.25rem;
+}
+.city-select-label {
+  position: absolute;
+  bottom: 25%;
+  right: 30%;
+  font-size: 1.25rem;
+}
+
+form input::placeholder,
+textarea::placeholder,
+select {
+  font-family: var(--main-font);
+  font-size: 1rem;
+  color: black;
 }

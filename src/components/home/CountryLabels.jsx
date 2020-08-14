@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CountryLabels = ({ changeCity }) => {
+const CountryLabels = ({ changeCity, currentCity }) => {
   const cities = ['London', 'Singapore'];
 
   const handleClick = (e) => {
@@ -13,7 +13,9 @@ const CountryLabels = ({ changeCity }) => {
       {cities.map((city, i) => (
         <div key={i} className='country-labels'>
           {' '}
-          <h2 onClick={handleClick}>{city}</h2>
+          <h2 className={currentCity === city.toLowerCase() && 'highlighted'} onClick={handleClick}>
+            {city}
+          </h2>
         </div>
       ))}
     </div>

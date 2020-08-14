@@ -10,3 +10,14 @@ export const fetchData = async (city) => {
     console.log(error);
   }
 };
+
+export const callAuthorise = async (password) => {
+  try {
+    const response = await axios.post(`${url}login`, {
+      password,
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
