@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #ea8383;
+  --fade-in: ease 0.2s;
+}
+
+body {
+  font-family: 'Bad Script', cursive;
+  cursor: default;
+}
+
+p,
+a {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  color: var(--main-bg-color);
+}
+
+/********************* NAV *********************/
+
+nav {
+  position: sticky;
+  height: 18vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  text-align: center;
+}
+
+.logo {
+  height: 80%;
+  position: absolute;
+  left: 4rem;
+}
+
+.main-title {
+  font-size: 3rem;
+  color: white;
+}
+
+.nav-button {
+  position: absolute;
+  right: 4rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.75rem;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  color: var(--main-bg-color);
+  transition: var(--fade-in);
+}
+
+/********************* HOME CONTENT *********************/
+
+.country-label-container,
+.cuisine-label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-labels {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.cuisine-labels {
+  margin-top: 1rem;
+  padding: 0.6rem;
+}
+
+.country-labels:first-child {
+  border-right: solid 1px black;
+}
+
+.cuisine-labels {
+  border-right: solid 1px black;
+}
+
+.cuisine-labels:last-child {
+  border-right: solid 1px rgba(0, 0, 0, 0);
+}
+
+.country-labels h2,
+.cuisine-labels h4 {
+  cursor: pointer;
+}
+.country-labels h2:hover,
+.cuisine-labels h4:hover {
+  cursor: pointer;
+  color: var(--main-bg-color);
+  transition: var(--fade-in);
+}
+
+/********************* RESTAURANT CARDS *********************/
+
+.restaurant-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem 3rem;
+}
+
+.restaurant-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  text-align: center;
+  background-color: white;
+  filter: drop-shadow(0px 4px 3px rgba(139, 139, 139, 0.377));
+  border-radius: 4px;
+  margin: 1rem 3rem;
+  padding: 1rem;
+  position: relative;
+  min-height: 300px;
+}
+
+.restaurant-name {
+  text-transform: capitalize;
+  border-bottom: solid 1px black;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.postcode {
+  text-transform: uppercase;
+}
+
+.price {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  color: var(--main-bg-color);
+}
+
+.cuisine {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: var(--main-bg-color);
+}
