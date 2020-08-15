@@ -12,7 +12,7 @@ const CuisineLabels = ({ changeCuisine, currentCuisine }) => {
       {cuisines.map((cuisine, i) => (
         <div key={i} className='cuisine-labels'>
           {' '}
-          <h4 className={currentCuisine === cuisine && 'highlighted'} onClick={handleClick}>
+          <h4 className={currentCuisine === cuisine ? 'highlighted' : null} onClick={handleClick}>
             {cuisine}
           </h4>
         </div>

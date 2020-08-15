@@ -47,6 +47,7 @@ nav {
   height: 80%;
   position: absolute;
   left: 4rem;
+  cursor: pointer;
 }
 
 .main-title {
@@ -214,7 +215,7 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0.5rem 4rem;
+  margin: 0rem 4rem;
 }
 
 .add-restaurant-container form {
@@ -224,10 +225,11 @@ input:focus {
     'a a . . b b b'
     'c c . . d d d'
     'e e . . f f f'
-    'g g g . . h h'
-    'g g g . . o o'
+    'g g g . . h .'
+    'g g g . . i .'
+    '. . . . . o .'
     'j . . . . . .';
-  padding: 2rem;
+  padding: 0.5rem;
   background-color: #fff0f0;
   position: relative;
 }
@@ -293,21 +295,13 @@ input:focus {
 .city {
   grid-area: o;
 }
+
 .add-restaurant-button {
   grid-area: j;
 }
 
-.cuisine-select-label {
-  position: absolute;
-  bottom: 38%;
-  right: 30%;
-  font-size: 1.25rem;
-}
-.city-select-label {
-  position: absolute;
-  bottom: 25%;
-  right: 30%;
-  font-size: 1.25rem;
+.budget {
+  grid-area: i;
 }
 
 form input::placeholder,

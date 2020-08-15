@@ -1,10 +1,10 @@
 import React from 'react';
 import bear from '../../bear.png';
 
-const Nav = ({ addBtn }) => {
+const Nav = ({ addBtn, home }) => {
   return (
     <nav>
-      <img className='logo' src={bear} alt='bear icon' />
+      <img onClick={() => home()} className='logo' src={bear} alt='bear icon' />
       <h1 className='main-title'>Vanessa is a Foooodie</h1>
       <div onClick={() => addBtn(true)} className='nav-button'>
         <h2>Add Restaurant</h2>

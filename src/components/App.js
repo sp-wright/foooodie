@@ -1,28 +1,16 @@
 import React, { useState } from 'react';
 import Nav from './nav/Nav';
 import HomeContent from './home/HomeContent';
-import Login from './addRestaurant/Login';
-import AddRestaurant from './addRestaurant/AddRestaurant';
+import Backend from './addRestaurant/Backend';
 
 function App() {
   const [clickedRestaurantBtn, setClickedRestaurantBtn] = useState(false);
-  const [isAuthorised, setIsAuthorised] = useState(false);
-
-  const handleAuth = (a) => {
-    setIsAuthorised(a);
-    setClickedRestaurantBtn(false);
-  };
 
   return (
     <div className='App'>
-      <Nav addBtn={(e) => setClickedRestaurantBtn(e)} />
-      {!isAuthorised && (
-        <>
-          {!clickedRestaurantBtn && <HomeContent />}
-          {clickedRestaurantBtn && <Login goHome={(e) => setClickedRestaurantBtn(e)} auth={handleAuth} />}
-        </>
-      )}
-      {isAuthorised && <AddRestaurant />}
+      <Nav home={() => setClickedRestaurantBtn(false)} addBtn={(e) => setClickedRestaurantBtn(e)} />
+      {!clickedRestaurantBtn && <HomeContent />}
+      {clickedRestaurantBtn && <Backend goHome={(e) => setClickedRestaurantBtn(e)} />}
     </div>
   );
 }

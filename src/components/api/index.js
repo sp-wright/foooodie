@@ -21,3 +21,22 @@ export const callAuthorise = async (password) => {
     console.log(error);
   }
 };
+
+export const addRestaurant = async (formData, mustEats) => {
+  const { name, website, postcode, comment, cuisine, budget, city } = formData;
+  try {
+    const response = await axios.post(`${url}${city}`, {
+      name,
+      website,
+      postcode,
+      comment,
+      mustEats,
+      cuisine,
+      city,
+      budget,
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};

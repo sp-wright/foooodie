@@ -5,9 +5,12 @@ const Login = ({ goHome, auth }) => {
   const [password, setPassword] = useState('');
 
   const authorise = async () => {
-    const { data } = await callAuthorise(password);
-    if (data.authorised) {
-      auth(data.authorised);
+    const {
+      data: { authorised },
+    } = await callAuthorise(password);
+
+    if (authorised) {
+      auth(authorised);
     }
   };
 

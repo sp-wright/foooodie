@@ -13,7 +13,7 @@ const CountryLabels = ({ changeCity, currentCity }) => {
       {cities.map((city, i) => (
         <div key={i} className='country-labels'>
           {' '}
-          <h2 className={currentCity === city.toLowerCase() && 'highlighted'} onClick={handleClick}>
+          <h2 className={currentCity === city.toLowerCase() ? 'highlighted' : null} onClick={handleClick}>
             {city}
           </h2>
         </div>
