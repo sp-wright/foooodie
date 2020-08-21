@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CuisineLabels = ({ changeCuisine, currentCuisine }) => {
-  const cuisines = ['chinese', 'singaporean', 'malaysian', 'korean', 'indian', 'japanese', 'fusion', 'western', 'misc.', 'all'];
+  const cuisines = ['chinese', 'singaporean', 'malaysian', 'korean', 'indian', 'japanese', 'fusion', 'western', 'misc.', 'drinks', 'all'];
 
   const handleClick = (e) => {
     changeCuisine(e.target.innerText);
