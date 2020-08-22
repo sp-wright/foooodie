@@ -4,5 +4,5 @@
 
 Things to work on...
 
-- more complex form validation
 - click through to individual cards & integrate Google Maps API
+- login section with choice to update/delete entries

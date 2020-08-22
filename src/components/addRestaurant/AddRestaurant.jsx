@@ -84,8 +84,6 @@ const AddRestaurant = ({ auth }) => {
     }
   };
 
-  console.log(restaurantForm, mustEat, error);
-
   return (
     <div className='add-restaurant-container'>
       <div className='welcome-titles'>
